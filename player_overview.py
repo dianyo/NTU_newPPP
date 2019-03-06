@@ -30,6 +30,7 @@ class PlayerOverview:
             or offense.main_offense_mode == 'ft'):
             self.turnover += 1
         else:
+            print(offense)
             self.result_to_player_overview(offense.result)
         
         if self.number == 'no':

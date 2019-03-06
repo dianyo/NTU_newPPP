@@ -63,7 +63,8 @@ class Offense:
         
     def parse_A(self, A_str):
         self.finish_method = A_str[0]
-        self.result = A_str[1]
+        if self.finish_method != 't':
+            self.result = A_str[1]
 
     def parse_B(self, B_str):
         self.ball_source = B_str
@@ -102,6 +103,7 @@ class OffenseResult:
         return return_str
     
     def parse_result(self, result_str):
+        print(result_str)
         for i, c in enumerate(result_str):
             if c.isnumeric():
                 self.shot_zone = result_str[:i+1]
